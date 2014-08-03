@@ -1,2 +1,3 @@
 process.env.SOUNDCLOUD_ID = '0482da9ad987e87ba383f481c357f403';
 process.env.SOUNDCLOUD_SECRET = '79c3692e42de7edc4bbd7286378944ec';
+process.env.SOUNDCLOUD_OAUTH_REDIRECT_PATH = '/api/oauth';

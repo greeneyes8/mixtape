@@ -1,3 +1,7 @@
+#connect-soundcloud {
+  cursor: pointer;
+}
+
 html, body {
 	background: #9BCD9B;
 	color: white;
