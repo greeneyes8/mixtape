@@ -1,11 +1,10 @@
-#connect-soundcloud {
-  cursor: pointer;
+html, body {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
 }
 
-html, body {
-	background: #9BCD9B;
-	color: white;
-	font-family: 'Montserrat', sans-serif;
+#connect-soundcloud {
+  cursor: pointer;
 }
 
 .white {
@@ -26,12 +25,12 @@ html, body {
 }
 
 footer {
-  margin: 60px 0px 10px 0px;
+  margin: 300px 0px 10px 0px;
   text-align: center;
 }
 
 footer a {
-	color: white;
+	color: black;
 	text-decoration: none;
 }
 

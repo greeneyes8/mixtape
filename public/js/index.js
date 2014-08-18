@@ -5,9 +5,10 @@ function init () {
   button.onclick = function (e) {
     // initialize client with app credentials
     SC.connect(function() {
-      SC.get('/me', function(me) {
-        alert('Hello, ' + me.username);
-      });
+
+      // SC.get('/me', function(me) {
+      //   alert('Hello, ' + me.username);
+      // });
     });
   };
 }
