@@ -1,5 +1,5 @@
 html, body {
-  color: black;
+  color: #4D4D4D;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -30,7 +30,7 @@ footer {
 }
 
 footer a {
-	color: black;
+	color: #4D4D4D;
 	text-decoration: none;
 }
 

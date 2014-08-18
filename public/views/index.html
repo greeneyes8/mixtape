@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 <!-- ASSIGN OUR ANGULAR MODULE -->
-<html lang="en">
+<html lang="en" ng-app="mixtape93">
 <head>
 	<!-- META -->
 	<meta charset="utf-8">
@@ -18,14 +18,25 @@
 	<!-- load bootstrap -->
 
 	<!-- SPELLS -->
+	<script src="http://connect.soundcloud.com/sdk.js"></script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+
+	<script src="/public/js/app.js"></script>
+	<script src="/public/js/controllers.js"></script>
+
+	<!-- Relative routing for $locationProvider. -->
+	<base href="/">
 </head>
 
 <!-- SET THE CONTROLLER AND GET ALL TODOS WITH INITIALIZE FUNCTION -->
 <body>
-	<div class="container" style="width: 400px; padding-top: 140px">
+	<div class="container" style="width: 400px; padding-top: 140px" ng-controller="mainController">
 		<div class="row">
 			<div style="margin: 0 auto;">
-				<div id="connect-soundcloud">
+				<div id="connect-soundcloud" ng-click="authenticateToSoundcloud()">
 					<img src="/public/img/mixtape93.png" width=400 />
 				</div>
 				<br>
@@ -41,11 +52,4 @@
 		<div>
 	</div>
 </body>
-<script src="http://connect.soundcloud.com/sdk.js"></script>
-<script src="/public/js/index.js"></script>
-<script>
-(function() {
-	init();
-}());
-</script>
 </html>
