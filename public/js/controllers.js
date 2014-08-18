@@ -1,8 +1,8 @@
 'use strict';
 
 mixtape93.controller('authController',
-  ['$scope', '$http', '$location',
-  function ($scope, $http, $location)
+  ['$scope', '$http', '$location', '$timeout',
+  function ($scope, $http, $location, $timeout)
 {
   SC.initialize({
     client_id: '0482da9ad987e87ba383f481c357f403',
