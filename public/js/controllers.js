@@ -11,7 +11,7 @@ mixtape93.controller('mainController',
   $scope.authenticateToSoundcloud = function authenticateToSoundcloud () {
     // initialize client with app credentials
     SC.connect(function() {
-      SC.get('/me/activities', function(activities) {
+      SC.get('/me/activities/all', function(activities) {
         console.log(activities);
       });
     });
