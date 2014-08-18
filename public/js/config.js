@@ -6,13 +6,13 @@ function($routeProvider, $locationProvider) {
     templateUrl: 'public/views/pages/auth.html',
     controller: 'authController'
   }).
-  when('/stream/', {
-    templateUrl: 'public/views/pages/stream.html',
-    controller: 'streamController'
-  }).
   when('/api/oauth', {
     templateUrl: 'public/views/callback.html',
     controller: 'authController'
+  }).
+  when('/stream/', {
+    templateUrl: 'public/views/pages/stream.html',
+    controller: 'streamController'
   }).
   otherwise({
     redirectTo: '/'
