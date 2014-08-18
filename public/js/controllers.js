@@ -9,8 +9,10 @@ mixtape93.controller('authController',
     redirect_uri: 'http://mixtape93.herokuapp.com/api/oauth'
   });
   $scope.authenticateToSoundcloud = function authenticateToSoundcloud () {
-    SC.connect(function() {
-      $location.url('/stream/');
+    SC.connect(function () {
+      $timeout(function () {
+        $scope.currentPath = $location.path('/stream');
+      }, 0);
       console.log('redirecting to stream');
     });
   };
