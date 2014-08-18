@@ -11,6 +11,7 @@ mixtape93.controller('authController',
   $scope.authenticateToSoundcloud = function authenticateToSoundcloud () {
     SC.connect(function() {
       $location.path('/stream/');
+      console.log('redirecting to stream');
     });
   };
 }]);
