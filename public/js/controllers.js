@@ -1,19 +1,25 @@
 'use strict';
 
-mixtape93.controller('mainController',
-  ['$scope', '$http',
-  function ($scope, $http)
+mixtape93.controller('authController',
+  ['$scope', '$http', '$location',
+  function ($scope, $http, $location)
 {
   SC.initialize({
     client_id: '0482da9ad987e87ba383f481c357f403',
     redirect_uri: 'http://mixtape93.herokuapp.com/api/oauth'
   });
   $scope.authenticateToSoundcloud = function authenticateToSoundcloud () {
-    // initialize client with app credentials
     SC.connect(function() {
-      SC.get('/me/activities/all', function(activities) {
-        console.log(activities);
-      });
+      $location.path('/stream/');
     });
   };
+}]);
+
+mixtape93.controller('streamController',
+  ['$scope', '$http',
+  function ($scope, $http)
+{
+  SC.get('/me/activities/all', function(activities) {
+    console.log(activities);
+  });
 }]);

@@ -23,8 +23,10 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-route.min.js"></script>
 
 	<script src="/public/js/app.js"></script>
+	<script src="/public/js/config.js"></script>
 	<script src="/public/js/controllers.js"></script>
 
 	<!-- Relative routing for $locationProvider. -->
@@ -33,18 +35,10 @@
 
 <!-- SET THE CONTROLLER AND GET ALL TODOS WITH INITIALIZE FUNCTION -->
 <body>
-	<div class="container" style="width: 400px; padding-top: 140px" ng-controller="mainController">
-		<div class="row">
-			<div style="margin: 0 auto;">
-				<div id="connect-soundcloud" ng-click="authenticateToSoundcloud()">
-					<img src="/public/img/mixtape93.png" width=400 />
-				</div>
-				<br>
-				<p style="text-align: center" class="dark-grey">
-					Click the mixtape to connect your Soundcloud.
-				</p>
-			</div>
+	<div class="container" style="width: 400px; padding-top: 140px">
+		<div ng-view>
 		</div>
+
 		<div class="row" style="margin: 0px;">
 			<footer class="col-xs-12 footer">
 				<a href="https://www.github.com/lambtron/mixtape">Github</a> | Made with <span class="glyphicon glyphicon-heart" style="color: #EE2C2C"></span> by <a href="http://www.twitter.com/andyjiang">@andyjiang</a>
