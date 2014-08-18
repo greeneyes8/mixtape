@@ -13,7 +13,6 @@ mixtape93.controller('authController',
       $timeout(function () {
         $scope.currentPath = $location.path('/stream');
       }, 0);
-      console.log('redirecting to stream');
     });
   };
 }]);
@@ -22,7 +21,11 @@ mixtape93.controller('streamController',
   ['$scope', '$http',
   function ($scope, $http)
 {
+  // Initialize variables.
+  var stream = $scope.stream = [];
+
   SC.get('/me/activities/all', function(activities) {
-    console.log(activities);
+    console.log(JSON.stringify(activities,null,2));
+    stream = activities.collection;
   });
 }]);
