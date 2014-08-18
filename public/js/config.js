@@ -6,7 +6,7 @@ function($routeProvider, $locationProvider) {
     templateUrl: 'public/views/pages/auth.html',
     controller: 'authController'
   }).
-  when('/api/oauth', {
+  when('/api/oauth/', {
     templateUrl: 'public/views/callback.html',
     controller: 'authController'
   }).
