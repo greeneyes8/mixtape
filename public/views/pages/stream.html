@@ -1,6 +1,6 @@
 <div class="container">
   <div ng-repeat="item in stream">
-    {{ item.type }}, {{ item.user.username }}
+    {{ item.type }}, {{ item.origin.user.username }}, {{ item.origin.title }}, {{ item.origin.duration/1000/60 }} minutes
     <hr>
   </div>
 </div>
