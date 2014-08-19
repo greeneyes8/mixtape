@@ -21,27 +21,13 @@ mixtape93.controller('streamController',
   ['$scope', '$http',
   function ($scope, $http)
 {
-  console.log('hi');
   // Initialize variables.
-  var stream = $scope.stream = [
-    {
-      type: 'hello',
-      user: {
-        username: 'world'
-      }
-    },
-    {
-      type: 'second',
-      user: {
-        username: 'time'
-      }
-    }
-  ];
+  var stream = $scope.stream = [];
 
   SC.get('/me/activities/all', function (activities) {
     // console.log(JSON.stringify(activities,null,2));
     $scope.stream = stream.concat.apply(stream, activities.collection);
     $scope.$apply();
-    console.log(stream);
+    console.log($scope.stream);
   });
 }]);
