@@ -38,11 +38,15 @@ mixtape93.controller('streamController',
     for (var i = 0; i < $scope.stream.length; i++) {
       var uri = $scope.stream[i].origin.uri;
 
+      var _this = this;
+
       SC.oEmbed(uri, { auto_play: false }, function(oEmbed) {
         console.log(JSON.stringify(oEmbed, null, 2));
         this.origin.oEmbed = oEmbed;
       }.bind($scope.stream[i]));
     }
+
+    console.log($scope.stream);
 
     $scope.$apply();
   };
