@@ -27,6 +27,10 @@ mixtape93.controller('streamController',
   SC.get('/me/activities/all', function (activities) {
     // console.log(JSON.stringify(activities,null,2));
     $scope.stream = stream.concat.apply(stream, activities.collection);
+    console.log($scope.stream);
+
+    // If its empty, then say something!
+
     $scope.$apply();
   });
 }]);
