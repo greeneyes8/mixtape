@@ -21,8 +21,22 @@ mixtape93.controller('streamController',
   ['$scope', '$http',
   function ($scope, $http)
 {
+  console.log('hi');
   // Initialize variables.
-  var stream = $scope.stream = [];
+  var stream = $scope.stream = [
+    {
+      type: 'hello',
+      user: {
+        username: 'world'
+      }
+    },
+    {
+      type: 'second',
+      user: {
+        username: 'time'
+      }
+    }
+  ];
 
   SC.get('/me/activities/all', function (activities) {
     // console.log(JSON.stringify(activities,null,2));

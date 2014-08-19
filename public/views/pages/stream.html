@@ -1,6 +1,5 @@
-<div class="container" style="width: 100%; height: 100%">
-  {{ $scope.stream }}
-  <div ng-repeat="item in stream" style="width: 100%; height: 100%;">
+<div class="container">
+  <div ng-repeat="item in stream">
     {{ item.type }}, {{ item.user.username }}
     <hr>
   </div>
