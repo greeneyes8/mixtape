@@ -18,8 +18,8 @@ mixtape93.controller('authController',
 }]);
 
 mixtape93.controller('streamController',
-  ['$scope', '$http', '$sce', '$q',
-  function ($scope, $http, $sce, $q)
+  ['$scope', '$http', '$sce',
+  function ($scope, $http, $sce)
 {
   // Initialize variables.
   var stream = $scope.stream = [];
@@ -33,10 +33,10 @@ mixtape93.controller('streamController',
     for (var i = 0; i < $scope.stream.length; i++) {
       var uri = $scope.stream[i].origin.uri;
       SC.oEmbed(uri, { auto_play: false }, function(oEmbed) {
-        console.log(JSON.stringify(oEmbed, null, 2));
+        // console.log(JSON.stringify(oEmbed, null, 2));
         this.origin.oEmbed = oEmbed;
         this.origin.oEmbed.html = $sce.trustAsHtml(oEmbed.html);
-        // $scope.$apply();
+        $scope.$apply();
       }.bind($scope.stream[i]));
     }
   };
