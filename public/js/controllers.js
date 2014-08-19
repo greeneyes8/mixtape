@@ -32,16 +32,17 @@ mixtape93.controller('streamController',
   $scope.getEmbed = function getEmbed () {
     var promises = $scope.stream.map(function (item) {
       return SC.oEmbed(item.origin.uri, { auto_play: false }, function (oEmbed) {
-        console.log(JSON.stringify(oEmbed, null, 2));
+        // console.log(JSON.stringify(oEmbed, null, 2));
         this.origin.oEmbed = oEmbed;
         this.origin.oEmbed.html = $sce.trustAsHtml(oEmbed.html);
       }.bind(item));
     });
     // return $q.all(promises);
-    $q.all(promises).then(function () {
-      $scope.$apply();
-      console.log('is it working');
-    });
+    console.log(promises);
+    // $q.all(promises).then(function () {
+    //   $scope.$apply();
+    //   console.log('is it working');
+    // });
   };
 
   //   var requests = [];
