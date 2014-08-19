@@ -7,6 +7,7 @@
 <div class="container" style="width: 500px; margin-top: 40px;">
   <div ng-repeat="item in stream">
     {{ item.type }}, {{ item.origin.user.username }}, {{ item.origin.title }}, {{ item.origin.duration/1000/60 }} minutes, {{ item.origin.oEmbed }}
+    <div ng-bind-html="item.origin.oEmbed.html"></div>
     <hr>
   </div>
 </div>

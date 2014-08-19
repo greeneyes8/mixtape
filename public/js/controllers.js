@@ -26,7 +26,6 @@ mixtape93.controller('streamController',
   SC.get('/me/activities/all', function (activities) {
     // console.log(JSON.stringify(activities,null,2));
     $scope.stream = stream.concat.apply(stream, activities.collection);
-    $scope.$apply();
     $scope.getEmbed();
   });
 
@@ -39,9 +38,5 @@ mixtape93.controller('streamController',
         $scope.$apply();
       }.bind($scope.stream[i]));
     }
-
-    // console.log($scope.stream);
-
-    // $scope.$apply();
   };
 }]);
