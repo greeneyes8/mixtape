@@ -34,7 +34,8 @@ mixtape93.controller('streamController',
       var uri = $scope.stream[i].origin.uri;
       SC.oEmbed(uri, { auto_play: false }, function(oEmbed) {
         console.log(JSON.stringify(oEmbed, null, 2));
-        this.origin.oEmbed = $sce.trustAsHtml(oEmbed);
+        this.origin.oEmbed = oEmbed;
+        this.origin.oEmbed.html = $sce.trustAsHtml(oEmbed.html);
         $scope.$apply();
       }.bind($scope.stream[i]));
     }
