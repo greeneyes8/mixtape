@@ -1,6 +1,8 @@
 <div class="container">
   <div ng-repeat="item in stream">
-    {{ item.type }}, {{ item.user.username }}
+    <div ng-model="{{ item }}">
+      {{ item.type }}, {{ item.user.username }}
+    </div>
     <hr>
   </div>
 </div>
