@@ -30,6 +30,8 @@ mixtape93.controller('streamController',
     console.log($scope.stream);
 
     $scope.$apply();
+
+    $scope.getEmbed();
   });
 
   $scope.getEmbed = function getEmbed () {
