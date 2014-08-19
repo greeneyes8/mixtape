@@ -23,7 +23,7 @@ mixtape93.controller('streamController',
 {
   console.log('hi');
   // Initialize variables.
-  $scope.stream = [
+  var stream = $scope.stream = [
     {
       type: 'hello',
       user: {
@@ -40,7 +40,7 @@ mixtape93.controller('streamController',
 
   SC.get('/me/activities/all', function (activities) {
     // console.log(JSON.stringify(activities,null,2));
-    $scope.stream.push(
+    stream.push(
       {
         type: 'third',
         user: {
@@ -49,6 +49,6 @@ mixtape93.controller('streamController',
       }
     );
 
-    console.log($scope.stream);
+    console.log(stream);
   });
 }]);
