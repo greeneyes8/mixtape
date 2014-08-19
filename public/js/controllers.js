@@ -41,7 +41,7 @@ mixtape93.controller('streamController',
       SC.oEmbed(uri, { auto_play: false }, function(oEmbed) {
         console.log('oEmbed response: ' + oEmbed);
         this.origin.oEmbed = oEmbed;
-      }).bind($scope.stream[i]);
+      }.bind($scope.stream[i]));
     }
   };
 }]);
