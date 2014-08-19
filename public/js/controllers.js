@@ -40,14 +40,8 @@ mixtape93.controller('streamController',
 
   SC.get('/me/activities/all', function (activities) {
     // console.log(JSON.stringify(activities,null,2));
-    stream.push(
-      {
-        type: 'third',
-        user: {
-          username: 'time'
-        }
-      }
-    );
+    stream.concat.apply(stream, activities.collection);
+    $scope.$apply();
 
     console.log(stream);
   });
