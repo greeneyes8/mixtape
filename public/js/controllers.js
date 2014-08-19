@@ -29,18 +29,17 @@ mixtape93.controller('streamController',
     $scope.stream = stream.concat.apply(stream, activities.collection);
     console.log($scope.stream);
 
-    // If its empty, then say something!
-
-    // Loop through array and then add a property to be viewed in HTML.
-    for (var i = 0; i < $scope.stream.length; i++) {
-      var uri = $scope.stream[i].origin.uri;
-      SC.oEmbed(uri, { auto_play: false }, function(oEmbed) {
-        console.log('oEmbed response: ' + oEmbed);
-        // $scope.stream[i].origin.oEmbed = oEmbed;
-        console.log($scope.stream[i]);
-      });
-    }
-
     $scope.$apply();
   });
+
+  $scope.getEmbed = function getEmbed () {
+    for (var i = 0; i < $scope.stream.length; i++) {
+      var uri = $scope.stream[i].origin.uri;
+
+      SC.oEmbed(uri, { auto_play: false }, function(oEmbed) {
+        console.log('oEmbed response: ' + oEmbed);
+        this.origin.oEmbed = oEmbed;
+      }).bind($scope.stream[i]);
+    }
+  };
 }]);
