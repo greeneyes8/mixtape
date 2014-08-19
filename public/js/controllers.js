@@ -31,6 +31,15 @@ mixtape93.controller('streamController',
 
     // If its empty, then say something!
 
+    // Loop through array and then add a property to be viewed in HTML.
+    for (var i = 0; i < $scope.stream.length; i++) {
+      var uri = $scope.stream[i].origin.uri;
+      SC.oEmbed(uri, { auto_play: true }, function(oEmbed) {
+        console.log('oEmbed response: ' + oEmbed);
+        $scope.stream[i].origin.oEmbed = oEmbed;
+      });
+    }
+
     $scope.$apply();
   });
 }]);
