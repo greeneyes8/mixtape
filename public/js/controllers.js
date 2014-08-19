@@ -23,7 +23,7 @@ mixtape93.controller('streamController',
 {
   console.log('hi');
   // Initialize variables.
-  var stream = $scope.stream = [
+  $scope.stream = [
     {
       type: 'hello',
       user: {
