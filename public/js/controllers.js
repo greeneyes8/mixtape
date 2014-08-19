@@ -28,6 +28,5 @@ mixtape93.controller('streamController',
     // console.log(JSON.stringify(activities,null,2));
     $scope.stream = stream.concat.apply(stream, activities.collection);
     $scope.$apply();
-    console.log($scope.stream);
   });
 }]);
