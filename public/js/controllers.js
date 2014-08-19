@@ -22,22 +22,22 @@ mixtape93.controller('streamController',
   function ($scope, $http, $sce)
 {
   // Initialize variables.
-  var stream = $scope.stream = [];
+  var stream = $scope.sc.stream = [];
   SC.get('/me/activities/all', function (activities) {
     // console.log(JSON.stringify(activities,null,2));
-    $scope.stream = stream.concat.apply(stream, activities.collection);
-    $scope.getEmbed();
+    $scope.sc.stream = $scope.sc.stream.concat.apply($scope.sc.stream, activities.collection);
+    $scope.sc.getEmbed();
   });
 
-  $scope.getEmbed = function getEmbed () {
-    for (var i = 0; i < $scope.stream.length; i++) {
-      var uri = $scope.stream[i].origin.uri;
+  $scope.sc.getEmbed = function getEmbed () {
+    for (var i = 0; i < $scope.sc.stream.length; i++) {
+      var uri = $scope.sc.stream[i].origin.uri;
       SC.oEmbed(uri, { auto_play: false }, function(oEmbed) {
         // console.log(JSON.stringify(oEmbed, null, 2));
         this.origin.oEmbed = oEmbed;
         this.origin.oEmbed.html = $sce.trustAsHtml(oEmbed.html);
-        $scope.$apply();
-      }.bind($scope.stream[i]));
+        // $scope.$apply();
+      }.bind($scope.sc.stream[i]));
     }
   };
 }]);
