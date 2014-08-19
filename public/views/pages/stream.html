@@ -1,4 +1,10 @@
-<div class="container">
+<header>
+  <div class="white" style="width: 500px; text-align: right; margin: 0 auto">
+    mixtape 93
+  </div>
+</header>
+
+<div class="container" style="width: 500px">
   <div ng-repeat="item in stream">
     {{ item.type }}, {{ item.origin.user.username }}, {{ item.origin.title }}, {{ item.origin.duration/1000/60 }} minutes
     <hr>

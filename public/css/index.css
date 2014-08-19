@@ -3,6 +3,14 @@ html, body {
   font-family: 'Montserrat', sans-serif;
 }
 
+header {
+  height: 44px;
+  background: #88a89c;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(225,213,180,1), 0px 6px 0px 0px rgba(243,130,100,1);
+  -moz-box-shadow: 0px 3px 0px 0px rgba(225,213,180,1), 0px 6px 0px 0px rgba(243,130,100,1);
+  box-shadow: 0px 3px 0px 0px rgba(225,213,180,1), 0px 6px 0px 0px rgba(243,130,100,1);
+}
+
 #connect-soundcloud {
   cursor: pointer;
 }
