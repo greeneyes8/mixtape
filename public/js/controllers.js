@@ -30,38 +30,14 @@ mixtape93.controller('streamController',
   });
 
   $scope.getEmbed = function getEmbed () {
-    var promises = $scope.stream.map(function (item) {
-      return SC.oEmbed(item.origin.uri, { auto_play: false }, function (oEmbed) {
-        // console.log(JSON.stringify(oEmbed, null, 2));
+    for (var i = 0; i < $scope.stream.length; i++) {
+      var uri = $scope.stream[i].origin.uri;
+      SC.oEmbed(uri, { auto_play: false }, function(oEmbed) {
+        console.log(JSON.stringify(oEmbed, null, 2));
         this.origin.oEmbed = oEmbed;
         this.origin.oEmbed.html = $sce.trustAsHtml(oEmbed.html);
-      }.bind(item));
-    });
-    // return $q.all(promises);
-    console.log(promises);
-    // $q.all(promises).then(function () {
-    //   $scope.$apply();
-    //   console.log('is it working');
-    // });
+        // $scope.$apply();
+      }.bind($scope.stream[i]));
+    }
   };
-
-  //   var requests = [];
-
-  //   for (var i = 0; i < $scope.stream.length; i++) {
-  //     var deferred = $q.defer();
-  //     requests.push(deferred);
-
-  //     var uri = $scope.stream[i].origin.uri;
-  //     SC.oEmbed(uri, { auto_play: false }, function(oEmbed) {
-  //       console.log(JSON.stringify(oEmbed, null, 2));
-  //       this.origin.oEmbed = oEmbed;
-  //       this.origin.oEmbed.html = $sce.trustAsHtml(oEmbed.html);
-  //       // $scope.$apply();
-  //     }.bind($scope.stream[i]), deferred.resolve, deferred.reject);
-  //   }
-
-  //   $q.all(requests).then(function () {
-  //     $scope.$apply();
-  //   });
-  // };
 }]);
